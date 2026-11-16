@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<!-- Security policy for the live site: only this site's own files and Google Fonts may load; nothing may be embedded, injected or posted elsewhere.
+     When the order server is added, list its address under connect-src. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'none'; base-uri 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>কর্ণমার্ট | Kornomart</title>
+<meta name="description" content="কর্ণমার্ট: ২৫ ও ৫০ কেজির বস্তায় নানা জাতের চাল, চলতি দরে।">
+<meta name="theme-color" content="#0A3F30">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect width=%2724%27 height=%2724%27 rx=%275%27 fill=%27%230A3F30%27/%3E%3Cpath d=%27M7.5 10.2C6.3 12 5.6 13.9 5.6 15.7c0 2.6 2 3.7 6.4 3.7s6.4-1.1 6.4-3.7c0-1.8-.7-3.7-1.9-5.5zM9 10.2 7.9 6.8l2 .8L12 5.9l2.1 1.7 2-.8-1.1 3.4z%27 fill=%27none%27 stroke=%27%23E3B23C%27 stroke-width=%271.5%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wdth,wght@75..125,400..800&display=swap">
+<link rel="stylesheet" href="css/site.css">
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">মূল অংশে যান</a>
+
+<header class="top" id="top">
+  <div class="wrap top__row">
+    <a class="brand" href="#top" translate="no">
+      <svg class="brand__mark" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false"><path d="M6.2 9.2C4.6 11.7 3.6 14.2 3.6 16.6c0 3.4 2.6 4.9 8.4 4.9s8.4-1.5 8.4-4.9c0-2.4-1-4.9-2.6-7.4z"/><path d="M8.2 9.2 6.7 4.6l2.6 1L12 3.4l2.7 2.2 2.6-1-1.5 4.6z"/><path d="M8 12.6h8"/></svg>
+      <span class="brand__bn" lang="bn">কর্ণমার্ট</span>
+      <span class="brand__en" lang="en">Kornomart</span>
+    </a>
+    <nav class="top__nav" aria-label="প্রধান মেনু" data-i18n-label="nav.label">
+      <a href="#chal" data-i18n="nav.rice">চালের তালিকা</a>
+      <a href="#niyom" data-i18n="nav.how">অর্ডার যেভাবে হয়</a>
+    </nav>
+    <div class="top__tools">
+      <button type="button" class="lang" id="lang-toggle" lang="en">English</button>
+      <a class="orderlink" href="#order" id="order-link">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M6.2 9.2C4.6 11.7 3.6 14.2 3.6 16.6c0 3.4 2.6 4.9 8.4 4.9s8.4-1.5 8.4-4.9c0-2.4-1-4.9-2.6-7.4z"/><path d="M8.2 9.2 6.7 4.6l2.6 1L12 3.4l2.7 2.2 2.6-1-1.5 4.6z"/></svg>
+        <span data-i18n="nav.order">অর্ডার</span>
+        <span class="count" id="order-count" aria-hidden="true" hidden>০</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap hero__grid">
+      <div class="hero__say">
+        <h1 id="hero-h" data-i18n="hero.h">বস্তা ধরে চাল কিনুন।</h1>
+        <p class="hero__sub" data-i18n="hero.sub">কর্ণমার্টে ২৫ ও ৫০ কেজির বস্তায় নানা জাতের চাল পাওয়া যায়। দর নিয়মিত হালনাগাদ হয়, তাই এখানে যে দাম দেখছেন সেটাই চলতি দাম।</p>
+        <div class="hero__cta">
+          <a class="btn btn--light" href="#chal" data-i18n="hero.cta1">চাল বাছুন</a>
+          <a class="btn btn--ghost" href="#niyom" data-i18n="hero.cta2">অর্ডার যেভাবে হয়</a>
+        </div>
+      </div>
+
+      <div class="slip" id="dor">
+        <div class="slip__head">
+          <h2 id="slip-h" data-i18n="slip.h">চালের দর</h2>
+          <p class="stamp stamp--date" id="slip-date" hidden></p>
+        </div>
+        <table class="rates" aria-labelledby="slip-h" aria-describedby="slip-foot">
+          <thead><tr id="rates-head"><th scope="col" data-i18n="slip.col">চাল</th><th scope="col" class="num">২৫ কেজি</th><th scope="col" class="num">৫০ কেজি</th></tr></thead>
+          <tbody id="rates-body" aria-busy="true">
+            <tr class="is-wait"><th scope="row"><span class="wait" data-i18n="load.loading">দর আনা হচ্ছে…</span></th><td class="num"><span class="bar"></span></td><td class="num"><span class="bar"></span></td></tr>
+            <tr class="is-wait" aria-hidden="true"><th scope="row"><span class="bar bar--wide"></span></th><td class="num"><span class="bar"></span></td><td class="num"><span class="bar"></span></td></tr>
+            <tr class="is-wait" aria-hidden="true"><th scope="row"><span class="bar bar--wide"></span></th><td class="num"><span class="bar"></span></td><td class="num"><span class="bar"></span></td></tr>
+          </tbody>
+        </table>
+        <p class="slip__foot" id="slip-foot" data-i18n="slip.foot">দাম টাকায়, প্রতি বস্তা।</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf" id="chal" aria-labelledby="shelf-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="shelf-h" data-i18n="shelf.h">চালের তালিকা</h2>
+        <p data-i18n="shelf.sub">ওজন বাছুন, কয় বস্তা লাগবে লিখুন, তারপর অর্ডারে যোগ করুন।</p>
+      </div>
+      <div class="shelf__grid" id="shelf-grid" aria-busy="true">
+        <div class="ghost" aria-hidden="true"></div>
+        <div class="ghost" aria-hidden="true"></div>
+        <div class="ghost" aria-hidden="true"></div>
+      </div>
+      <div class="state" id="shelf-error" hidden>
+        <h3 data-i18n="load.error.h">দর এখন দেখানো যাচ্ছে না</h3>
+        <p data-i18n="load.error.p">ইন্টারনেট সংযোগ দেখে আবার চেষ্টা করুন।</p>
+        <button type="button" class="btn btn--ink" id="retry" data-i18n="load.retry">আবার চেষ্টা করুন</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="niyom" aria-labelledby="how-h">
+    <div class="wrap">
+      <h2 id="how-h" data-i18n="how.h">অর্ডার যেভাবে হয়</h2>
+      <ol class="steps">
+        <li>
+          <h3 data-i18n="how.1.h">বস্তা বাছুন</h3>
+          <p data-i18n="how.1.p">চালের জাত, বস্তার ওজন আর কয় বস্তা লাগবে ঠিক করুন।</p>
+        </li>
+        <li>
+          <h3 data-i18n="how.2.h">নাম, মোবাইল নম্বর ও ঠিকানা দিন</h3>
+          <p data-i18n="how.2.p">অনলাইনে কোনো টাকা দিতে হয় না।</p>
+        </li>
+        <li>
+          <h3 data-i18n="how.3.h">ফোনে নিশ্চিত হলে চাল পৌঁছাবে</h3>
+          <p data-i18n="how.3.p">দোকান থেকে ফোন করে অর্ডার নিশ্চিত করা হবে। টাকা দেবেন চাল হাতে পাওয়ার সময়।</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="order" id="order" aria-labelledby="order-h">
+    <div class="wrap order__grid">
+      <div class="order__list">
+        <h2 id="order-h" tabindex="-1" data-i18n="order.h">আপনার অর্ডার</h2>
+        <p class="order__empty" id="order-empty"><span data-i18n="order.empty">এখনো কোনো বস্তা যোগ করেননি।</span> <a href="#chal" data-i18n="order.browse">চালের তালিকা দেখুন</a></p>
+        <ul class="lines" id="order-lines"></ul>
+        <p class="total" id="order-total" hidden><span data-i18n="order.total">মোট</span> <strong id="order-sum"></strong></p>
+        <p class="order__note" id="order-note" hidden data-i18n="order.pricenote">মোট দাম চলতি দর থেকে হিসাব করা। দর বদলালে এখানেও বদলে যাবে।</p>
+      </div>
+
+      <div class="order__side">
+        <form class="paper" id="order-form" novalidate>
+          <h3 data-i18n="form.h">কোথায় পৌঁছাবে</h3>
+
+          <div class="field">
+            <label for="f-name" data-i18n="form.name">আপনার নাম</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" maxlength="60" required aria-describedby="err-name" placeholder="যেমন: আবদুল করিম…" data-i18n-ph="form.name.ph">
+            <p class="field__err" id="err-name" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="f-phone" data-i18n="form.phone">মোবাইল নম্বর</label>
+            <input id="f-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="17" required spellcheck="false" aria-describedby="hint-phone err-phone" placeholder="01XXXXXXXXX…">
+            <p class="field__hint" id="hint-phone" data-i18n="form.phone.hint">১১ সংখ্যার নম্বর, ০১ দিয়ে শুরু।</p>
+            <p class="field__err" id="err-phone" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="f-address" data-i18n="form.address">ঠিকানা</label>
+            <textarea id="f-address" name="address" rows="3" autocomplete="street-address" maxlength="200" required aria-describedby="err-address" placeholder="বাড়ি বা দোকান, রাস্তা, এলাকা, থানা, জেলা…" data-i18n-ph="form.address.ph"></textarea>
+            <p class="field__err" id="err-address" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="f-note" data-i18n="form.note">বাড়তি কথা (ঐচ্ছিক)</label>
+            <input id="f-note" name="note" type="text" autocomplete="off" maxlength="200" aria-describedby="err-note" placeholder="যেমন: বিকেলের পরে ফোন করবেন…" data-i18n-ph="form.note.ph">
+            <p class="field__err" id="err-note" hidden></p>
+          </div>
+
+          <!-- Trap for form-filling bots. People never see or reach this field. -->
+          <div class="hp" aria-hidden="true">
+            <label for="f-website">Website</label>
+            <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <p class="form__status" id="form-status" role="alert" tabindex="-1" hidden></p>
+          <button type="submit" class="btn btn--stamp btn--wide" id="submit" data-i18n="form.submit">অর্ডার পাঠান</button>
+        </form>
+
+        <div class="paper memo" id="memo" hidden>
+          <h3 id="memo-h" tabindex="-1" data-i18n="memo.h">অর্ডারের মেমো</h3>
+          <p class="memo__state" id="memo-state"></p>
+          <dl class="memo__facts" id="memo-facts"></dl>
+          <ol class="memo__lines" id="memo-lines"></ol>
+          <p class="total total--memo"><span data-i18n="order.total">মোট</span> <strong id="memo-sum"></strong></p>
+          <div class="memo__acts">
+            <button type="button" class="btn btn--ink" id="memo-copy" data-i18n="memo.copy">মেমো কপি করুন</button>
+            <button type="button" class="btn btn--line" id="memo-new" data-i18n="memo.new">নতুন অর্ডার শুরু করুন</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div>
+      <p class="foot__brand" translate="no"><span lang="bn">কর্ণমার্ট</span> <span class="foot__en" lang="en">Kornomart</span></p>
+      <p data-i18n="foot.line">২৫ ও ৫০ কেজির বস্তায় চাল।</p>
+    </div>
+    <div>
+      <h2 data-i18n="foot.contact.h">যোগাযোগ</h2>
+      <ul class="foot__list" id="foot-contact">
+        <li class="todo" data-i18n="foot.phone.todo">দোকানের ফোন নম্বর এখানে বসবে</li>
+        <li class="todo" data-i18n="foot.address.todo">দোকানের ঠিকানা এখানে বসবে</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<a class="dock" id="dock" href="#order" data-show="false">
+  <span id="dock-text"></span>
+  <span class="dock__go" data-i18n="dock.go">অর্ডার দেখুন</span>
+</a>
+
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+<!-- One sack per rice. app.js copies this and fills it from data/catalogue.json. -->
+<template id="tpl-item">
+  <article class="item">
+    <div class="stage" aria-hidden="true">
+      <div class="bag">
+        <span class="bag__ear bag__ear--l"></span>
+        <span class="bag__ear bag__ear--r"></span>
+        <div class="bag__body" lang="bn">
+          <span class="bag__brand" translate="no">কর্ণমার্ট</span>
+          <span class="bag__name"></span>
+          <span class="bag__process"></span>
+          <span class="stamp bag__grade"></span>
+          <span class="bag__net"><span class="bag__kg"></span><span class="bag__unit">কেজি</span></span>
+          <span class="bag__tol"></span>
+        </div>
+      </div>
+    </div>
+    <div class="buy">
+      <h3 class="buy__name"></h3>
+      <p class="buy__alt"></p>
+      <fieldset class="seg">
+        <legend class="vh"></legend>
+        <div class="seg__opts"></div>
+      </fieldset>
+      <p class="buy__price"><strong class="price"></strong> <span class="per"></span></p>
+      <p class="buy__save" hidden></p>
+      <div class="buy__row">
+        <div class="qty-slot"></div>
+        <button type="button" class="btn btn--ink add"></button>
+      </div>
+    </div>
+  </article>
+</template>
+
+<template id="ico-minus"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M5 12h14"/></svg></template>
+<template id="ico-plus"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></template>
+<template id="ico-close"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></template>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+[
+{"id":"amon","name":{"bn":"আমন চাল","en":"Amon Rice"},"short":{"bn":"আমন","en":"Amon"},"grade":null,"process":null,"tolerance_g":null,"packs":[{"kg":25,"price":1975},{"kg":50,"price":3950}],"in_stock":true,"sort":10,"updated_at":"2026-11-17T05:05:00+06:00"},
+{"id":"nazirshail-premium","name":{"bn":"নাজিরশাইল চাল প্রিমিয়াম (আধা সিদ্ধ)","en":"Nazirshail Rice Premium (Half Boiled)"},"short":{"bn":"নাজিরশাইল","en":"Nazirshail"},"grade":{"bn":"প্রিমিয়াম","en":"Premium"},"process":{"bn":"আধা সিদ্ধ","en":"Half boiled"},"tolerance_g":50,"packs":[{"kg":25,"price":2245},{"kg":50,"price":4490}],"in_stock":true,"sort":20,"updated_at":"2026-11-17T05:05:00+06:00"},
+{"id":"miniket-premium","name":{"bn":"মিনিকেট চাল প্রিমিয়াম (সিদ্ধ)","en":"Miniket Rice Premium (Boiled)"},"short":{"bn":"মিনিকেট","en":"Miniket"},"grade":{"bn":"প্রিমিয়াম","en":"Premium"},"process":{"bn":"সিদ্ধ","en":"Boiled"},"tolerance_g":50,"packs":[{"kg":25,"price":2195},{"kg":50,"price":4380}],"in_stock":true,"sort":30,"updated_at":"2026-11-17T05:05:00+06:00"}
+]
