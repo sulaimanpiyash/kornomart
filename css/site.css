@@ -287,6 +287,9 @@ main h3 { font-size: 1.375rem; font-weight: 700; line-height: 1.4; }
 .item[data-stock="out"] .bag { filter: grayscale(1) opacity(.6); }
 
 .buy { display: grid; gap: .7rem; }
+@media (min-width: 38rem) {   /* side by side: room for two-line names, so the controls line up across sacks */
+  .buy__name { display: flex; align-items: flex-end; min-height: 2.8em; }
+}
 .buy__alt { margin-top: -.5rem; font-size: .9rem; color: var(--muted); }
 .buy__alt:empty { display: none; }
 
